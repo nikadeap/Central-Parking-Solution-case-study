@@ -1,20 +1,20 @@
-#Question 3: Read the case "Central Parking Solutions", and answer the following questions.
+
 #1.Explore the data for weekday and weekend. What inferences can you make based on descriptive statistics?
-#Load CPS Weekday and Weekend data
+#Load Weekday and Weekend data
 
 #Set Directory
-setwd('C:/Users/Harish/Desktop/BDA/Assignment')
+setwd('C:/.../')
 # load library readxl to read xls file
 library(readxl)
 
-#Store Weekend data in CPS_Weekend dataset and weekday data in CPS_Weekday in dataset
-CPS_Weekend <- read_excel("CPS-Data Set.xls", sheet = 'Weekend')
-CPS_Weekday <- read_excel("CPS-Data Set.xls", sheet = 'Weekday')
+#Store Weekend data in CPS_Weekend dataset and weekday data in PS_Weekday in dataset
+PS_Weekend <- read_excel("Dataset.xls", sheet = 'Weekend')
+PS_Weekday <- read_excel("Dataset.xls", sheet = 'Weekday')
 
 
 #Rename the columns
 
-colnames(CPS_Weekday) <-
+colnames(PS_Weekday) <-
   c(
     'Vehicle',
     'Equipment',
@@ -27,7 +27,7 @@ colnames(CPS_Weekday) <-
     'TicketType',
     'Weekday'
   )
-colnames(CPS_Weekend) <-
+colnames(PS_Weekend) <-
   c(
     'Vehicle',
     'Equipment',
@@ -42,16 +42,16 @@ colnames(CPS_Weekend) <-
   )
 
 
-CPS_Weekday <- data.frame(CPS_Weekday)
-CPS_Weekend <- data.frame(CPS_Weekend)
+PS_Weekday <- data.frame(PS_Weekday)
+PS_Weekend <- data.frame(PS_Weekend)
 
 #Remove Pass holder and Loss of Ticket records
 weekDay <-
-  subset(CPS_Weekday,
-         CPS_Weekday$TicketType != 'Pass' & CPS_Weekday$Amount != 300)
+  subset(PS_Weekday,
+         PS_Weekday$TicketType != 'Pass' & PS_Weekday$Amount != 300)
 weekEnd <-
-  subset(CPS_Weekend,
-         CPS_Weekend$TicketType != 'Pass' & CPS_Weekend$Amount != 300)
+  subset(PS_Weekend,
+         PS_Weekend$TicketType != 'Pass' & PS_Weekend$Amount != 300)
 
 weekDay <- weekDay[, 1:10]
 weekEnd <- weekEnd[, 1:10]
