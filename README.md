@@ -1,4 +1,4 @@
-### Central-Parking-Solution-case-study
+### Smart-Parking-Solution-case-study
 
 It is a statistical study on central parking solutions
 
